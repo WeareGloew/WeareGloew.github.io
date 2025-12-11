@@ -338,3 +338,99 @@ footer {
     height: 75px;
   }
 }
+
+/* ========== MOBILE NAV / HAMBURGER ========== */
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  margin-left: 16px;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  margin: 4px 0;
+  background: var(--purple-deep);
+  border-radius: 999px;
+  transition: transform 0.25s ease, opacity 0.25s ease, width 0.25s ease;
+}
+
+/* When menu is open, animate into an "X" */
+.nav-toggle.nav-open span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.nav-toggle.nav-open span:nth-child(2) {
+  opacity: 0;
+  width: 0;
+}
+
+.nav-toggle.nav-open span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Mobile layout */
+@media (max-width: 768px) {
+  header {
+    align-items: center;
+    gap: 12px;
+  }
+
+  .brand {
+    flex: 1;
+  }
+
+  nav {
+    position: absolute;
+    right: 16px;
+    top: 68px;
+    background: #f7f2ff;
+    box-shadow: 0 10px 30px rgba(51, 16, 96, 0.12);
+    border-radius: 16px;
+    padding: 10px 16px;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 20;
+  }
+
+  nav.nav-open {
+    display: flex;
+  }
+
+  nav a {
+    margin-left: 0;
+    font-size: 15px;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  /* Tidy hero on small screens */
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 48px 0 40px;
+  }
+
+  .hero-title {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-buttons .btn-primary,
+  .hero-buttons .btn-secondary {
+    width: 100%;
+    text-align: center;
+  }
+}
