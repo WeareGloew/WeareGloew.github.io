@@ -435,3 +435,18 @@ footer {
     text-align: center;
   }
 }
+.privacy-note {
+  background: #f5f0ff;
+  border-left: 4px solid var(--purple-deep);
+  padding: 18px 20px;
+  border-radius: 10px;
+  margin-top: 40px;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: #4c3a66;
+}
+
+.privacy-note a {
+  color: var(--purple-deep);
+  text-decoration: underline;
+}
