@@ -450,3 +450,43 @@ footer {
   color: var(--purple-deep);
   text-decoration: underline;
 }
+
+/* HAMBURGER ICON */
+.hamburger {
+  width: 32px;
+  height: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 100%;
+  background: #4A2C7A; /* deep purple */
+  border-radius: 3px;
+  transition: 0.3s ease;
+}
+
+/* TURN INTO X WHEN ACTIVE */
+.hamburger.active span:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+/* MOBILE NAV MENU */
+.mobile-nav {
+  display: none;
+}
+
+.mobile-nav.open {
+  display: block;
+}
