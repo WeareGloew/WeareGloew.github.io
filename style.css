@@ -539,7 +539,7 @@ footer {
 .hamburger span {
   height: 3px;
   width: 100%;
-  background: var(--purple-deep);
+  background: #3a1a6f; /* deep strong purple – always visible */
   transition: 0.3s ease;
   border-radius: 3px;
 }
@@ -547,12 +547,16 @@ footer {
 /* TURN INTO X */
 .hamburger.active span:nth-child(1) {
   transform: translateY(9px) rotate(45deg);
+  background: #3a1a6f;
 }
+
 .hamburger.active span:nth-child(2) {
   opacity: 0;
 }
+
 .hamburger.active span:nth-child(3) {
   transform: translateY(-9px) rotate(-45deg);
+  background: #3a1a6f;
 }
 
 /* MOBILE RESPONSIVE RULES */
@@ -569,4 +573,14 @@ footer {
     display: flex;
   }
 }
+.hamburger {
+  position: relative;
+  z-index: 9999;
+}
+
+.mobile-nav {
+  z-index: 999;
+}
+
+
 
