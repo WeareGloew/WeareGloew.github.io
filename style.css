@@ -582,5 +582,39 @@ footer {
   z-index: 999;
 }
 
+/* TESTIMONIAL SECTION */
+
+.testimonial-section {
+  text-align: center;
+  padding: 60px 20px;
+  background: #f6f0fb;
+}
+
+.testimonial-title {
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #5e2a84;
+}
+
+.testimonial-container {
+  position: relative;
+  max-width: 600px;
+  margin: auto;
+  min-height: 80px;
+}
+
+.testimonial {
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+  font-size: 18px;
+  color: #4b2a63;
+}
+
+.testimonial.active {
+  opacity: 1;
+}
+
 
 
