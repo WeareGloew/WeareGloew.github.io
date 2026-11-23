@@ -11,3 +11,8 @@ G.L.O.E.W website additions
 7. On mobile tap a partner card to flip it, then tap Visit to open the external link. On desktop hover or use keyboard Enter/Space to flip.
 8. Check logo usage permissions and verify official URLs before publishing. Do not publish partner claims that are not accurate.
 9. Check all helpline information and digital safety wording against official providers periodically.
+
+UPDATED PARTNER LOGOS (23 Nov 2026)
+Four supplied logos are now included in assets/partners/: nails-by-viccx.png, blagrave-trust.png, ymca-london-city-north.png, harringay-club.png. Exotica removed. Upload the assets folder along with partners.js to GitHub. Remaining partner logos still need to be supplied/uploaded.
+
+Updated 23 Nov 2026: added eight partner logo images and direct websites supplied by user. Spiral Solutions has been removed from the partners list.
