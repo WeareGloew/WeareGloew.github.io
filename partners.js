@@ -4,7 +4,7 @@ const partners = [
   {group:'funders',name:'Blagrave Trust / Challenge & Change',description:'Funding and encouragement that helped G.L.O.E.W develop and deliver its programmes.',logo:'blagrave-trust.png',url:'https://www.blagravetrust.org/'},
   {group:'community',name:'YMCA London City and North',description:'Provided community space for G.L.O.E.W programme sessions at Crouch End.',logo:'ymca-london-city-north.png',url:'https://www.ymcalondoncan.org'},
   {group:'community',name:'Harringay Club',description:'Hosted a G.L.O.E.W dance workshop, providing space for movement and connection.',logo:'harringay-club.png',url:'https://harringayclub.org'},
-  {group:'collaborators',name:'Empowered Movement by Tia',description:'Movement and empowerment workshops.',logo:'empowered-movement.png',url:'https://www.empoweredmovement.uk/'},
+  {group:'collaborators',name:'Empowered Movement',description:'Movement and empowerment workshops.',logo:'empowered-movement.png',url:'https://www.empoweredmovement.uk/'},
   {group:'collaborators',name:'Access by B',description:'Skills and personal-development workshop collaboration.',logo:'access-by-b.png',url:'https://www.instagram.com/accessbyb/'},
   {group:'collaborators',name:'Rastamamalocs',description:'Hair and locs skills-sharing workshops.',logo:'rastamamalocs.png',url:'https://rastamamalocs.com/'},
   {group:'collaborators',name:'Natlah',description:'Natural and vegan menstrual wellness products.',logo:'natlah.png',url:'https://www.natlah.com'},
