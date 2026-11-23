@@ -1,3 +1,4 @@
+
 /* ------------------------------
    GLOBAL RESET & BASE STYLING
 ------------------------------ */
@@ -75,14 +76,21 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 24px;
   margin-bottom: 20px;
   position: relative;
+  z-index: 100;
 }
 
 .brand {
   display: flex;
   align-items: center;
   gap: 10px;
+  min-width: 0;
+}
+
+.brand-logo {
+  flex-shrink: 0;
 }
 
 .brand-logo img,
@@ -96,6 +104,7 @@ img.brand-logo {
   font-size: 1.2rem;
   font-weight: 700;
   letter-spacing: 1px;
+  white-space: nowrap;
 }
 
 .brand-text-main {
@@ -108,8 +117,9 @@ img.brand-logo {
 ------------------------------ */
 .desktop-nav {
   display: flex;
-  gap: 28px;
+  gap: 18px;
   align-items: center;
+  justify-content: flex-end;
 }
 
 .desktop-nav a,
@@ -121,13 +131,114 @@ img.brand-logo {
   transition: 0.2s ease;
 }
 
+.desktop-nav a {
+  white-space: nowrap;
+}
+
 .desktop-nav a:hover,
 .mobile-nav a:hover {
   color: #8d57ff;
   text-decoration: underline;
 }
 
-/* Hamburger */
+/* Current page highlight */
+.desktop-nav a[aria-current="page"],
+.mobile-nav a[aria-current="page"] {
+  color: var(--purple-deep);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: #b58be8;
+  text-underline-offset: 6px;
+}
+
+/* Consistent navigation order */
+.desktop-nav a[href="index.html"],
+.mobile-nav a[href="index.html"] {
+  order: 1;
+}
+
+.desktop-nav a[href="about.html"],
+.mobile-nav a[href="about.html"] {
+  order: 2;
+}
+
+.desktop-nav a[href="programme.html"],
+.mobile-nav a[href="programme.html"] {
+  order: 3;
+}
+
+.desktop-nav a[href="join.html"],
+.mobile-nav a[href="join.html"] {
+  order: 4;
+}
+
+.desktop-nav a[href="partners.html"],
+.mobile-nav a[href="partners.html"] {
+  order: 5;
+}
+
+.desktop-nav a[href="sisterhood.html"],
+.mobile-nav a[href="sisterhood.html"] {
+  order: 6;
+}
+
+.desktop-nav a[href="resources.html"],
+.mobile-nav a[href="resources.html"] {
+  order: 7;
+}
+
+.desktop-nav a[href="contact.html"],
+.mobile-nav a[href="contact.html"] {
+  order: 8;
+}
+
+/* ------------------------------
+   DESKTOP HEADER
+------------------------------ */
+@media (min-width: 1101px) {
+  header {
+    width: calc(100vw - 80px);
+    max-width: 1280px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 20px 0;
+    gap: 30px;
+  }
+
+  .brand {
+    flex-shrink: 0;
+    gap: 12px;
+  }
+
+  .brand-logo img,
+  img.brand-logo {
+    width: 85px;
+    height: 85px;
+  }
+
+  .brand-text-top {
+    font-size: 1.5rem;
+    color: var(--purple-deep);
+    letter-spacing: 1.5px;
+  }
+
+  .brand-text-main {
+    display: none;
+  }
+
+  .desktop-nav {
+    gap: clamp(12px, 1.5vw, 24px);
+    flex-wrap: nowrap;
+  }
+
+  .desktop-nav a {
+    font-size: 0.9rem;
+  }
+}
+
+/* ------------------------------
+   HAMBURGER MENU
+------------------------------ */
 .hamburger {
   width: 30px;
   height: 22px;
@@ -137,6 +248,10 @@ img.brand-logo {
   cursor: pointer;
   position: relative;
   z-index: 9999;
+  background: transparent;
+  border: none;
+  padding: 0;
+  flex-shrink: 0;
 }
 
 .hamburger span {
@@ -243,7 +358,7 @@ img.brand-logo {
 
 .btn-primary:hover {
   background: #6232d4;
-  box-shadow: 0 0 14px rgba(125, 71, 255, 0.6);
+  box-shadow: 0 0 14px rgba(125,71,255,0.6);
 }
 
 .btn-secondary-solid {
@@ -267,7 +382,7 @@ img.brand-logo {
 
 .btn-pro:hover {
   background: #2a0752;
-  box-shadow: 0 0 14px rgba(61, 12, 116, 0.5);
+  box-shadow: 0 0 14px rgba(61,12,116,0.5);
 }
 
 /* ------------------------------
@@ -367,7 +482,6 @@ ul.bullet li {
 /* ------------------------------
    TESTIMONIAL SECTION
 ------------------------------ */
-
 .testimonial-section {
   text-align: center;
   padding: 45px 20px 35px;
@@ -447,7 +561,6 @@ ul.bullet li {
 /* ------------------------------
    DONATION SECTION
 ------------------------------ */
-
 .donation-card {
   text-align: center;
   margin-top: 20px;
@@ -532,7 +645,14 @@ footer,
 /* ------------------------------
    RESPONSIVE DESIGN
 ------------------------------ */
-@media (max-width: 900px) {
+@media (min-width: 1101px) {
+  .mobile-nav,
+  .mobile-nav.open {
+    display: none;
+  }
+}
+
+@media (max-width: 1100px) {
   .desktop-nav {
     display: none;
   }
@@ -555,6 +675,10 @@ footer,
   .hero-title,
   .page-intro h1 {
     font-size: 2rem;
+  }
+
+  header {
+    gap: 12px;
   }
 
   .brand-logo img,
@@ -586,9 +710,9 @@ footer,
     font-size: 26px;
   }
 
- .testimonial-container {
-  min-height: 80px;
-}
+  .testimonial-container {
+    min-height: 80px;
+  }
 
   .testimonial {
     font-size: 17px;
