@@ -1,0 +1,40 @@
+/* Additional styling for G.L.O.E.W Partners and Resources pages.
+   This file loads AFTER your existing style.css. */
+.gloew-extra {padding-bottom:28px}
+.extra-intro {text-align:center;max-width:730px;margin:32px auto 48px}
+.extra-intro h1 {margin:12px 0 22px}
+.extra-intro p {color:#5b3d82;font-size:1.08rem}
+.partner-category,.resource-section {margin:42px 0}
+.partner-category h2,.resource-section h2 {margin-bottom:20px}
+.partner-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.partner-card {height:260px;perspective:1100px;cursor:pointer;outline-offset:5px;border-radius:18px}
+.partner-card:focus-visible {outline:3px solid #7d47ff}
+.partner-inner {position:relative;width:100%;height:100%;transition:transform .65s cubic-bezier(.2,.75,.3,1);transform-style:preserve-3d}
+.partner-card.flipped .partner-inner {transform:rotateY(180deg)}
+@media (hover:hover) and (pointer:fine) {.partner-card:hover .partner-inner {transform:rotateY(180deg)}}
+.partner-face {position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:16px;text-align:center;border:1px solid #eadbf6;border-radius:18px;box-shadow:0 5px 18px rgba(58,26,111,.08);backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:auto}
+.partner-front {background:#fff}
+.partner-back {background:linear-gradient(145deg,#f3e9fa,#e5d2f5);transform:rotateY(180deg)}
+.partner-face h3 {font-size:1.1rem;line-height:1.3;margin:0;overflow-wrap:anywhere}
+.partner-back p {font-size:.9rem;line-height:1.4;margin:0}
+.partner-logo-wrap {height:115px;width:100%;display:flex;justify-content:center;align-items:center}
+.partner-logo-wrap img {max-width:100%;max-height:100%;object-fit:contain}
+.partner-logo-fallback {font-size:3rem;color:#8b57bd}
+.partner-hint,.partner-pending {font-size:.76rem;color:#765b90}
+.partner-visit {display:inline-block;padding:9px 12px;background:#6b38b6;color:#fff!important;border-radius:9px;text-decoration:none;font-size:.83rem;font-weight:700}
+.partner-visit:focus-visible {outline:3px solid #251039;outline-offset:3px}
+.partner-note {font-size:.88rem;color:#6b5d80;margin:28px 0}
+.extra-footer {text-align:center;margin:35px 0 20px;padding:24px 16px;border-top:1px solid #eadbf6;color:#5b3d82}
+.extra-footer p {font-size:.9rem}.extra-footer a,.resource-card a,.safety-note a {color:#582d95}
+.urgent-support {background:#fff;border:2px solid #7d47ff;border-radius:18px;padding:22px;margin:24px 0}
+.urgent-support h2 {font-size:1.4rem}
+.resource-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.resource-card {display:flex;flex-direction:column;align-items:flex-start;gap:10px;background:#fff;border:1px solid #eadbf6;border-radius:18px;padding:23px;box-shadow:0 4px 16px rgba(58,26,111,.06)}
+.resource-card h3 {font-size:1.24rem}.resource-card p {margin:0}.resource-card a {font-weight:700;overflow-wrap:anywhere}
+.resource-number {font-size:1.2rem}
+.safety-note {background:#f3e9fa;border-left:5px solid #6b38b6;border-radius:12px;padding:22px;margin:35px 0}
+.safety-note h2 {font-size:1.3rem}
+/* Existing main.js controls the hamburger. These rules ensure correct positioning. */
+@media (max-width:900px){.mobile-nav {top:100%;right:0;max-width:min(90vw,320px)}.mobile-nav.open{display:flex}}
+@media (max-width:600px){.partner-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.partner-card{height:238px}.partner-face{padding:10px;gap:7px}.partner-logo-wrap{height:100px}.partner-face h3{font-size:.95rem}.partner-back p{font-size:.78rem;line-height:1.35}.partner-visit{font-size:.75rem;padding:7px 9px}.partner-hint{font-size:.68rem}.resource-grid{grid-template-columns:1fr}.extra-intro{margin:25px auto 34px}.extra-intro h1{font-size:2rem}}
+@media (prefers-reduced-motion:reduce){.partner-inner{transition:none}.partner-card.flipped .partner-inner{transform:rotateY(180deg)}}
