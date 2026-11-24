@@ -220,3 +220,52 @@ document.addEventListener("DOMContentLoaded", () => {
   toggleBackToTop();
 
 });
+// --------------------------------
+// GLOBAL FOOTER SUPPORT LINK
+// --------------------------------
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const footer = document.querySelector("footer")
+    || document.querySelector(".footer-card");
+
+  if (!footer) return;
+
+  // Find existing support links
+  const existingLinks = footer.querySelectorAll(
+    'a[href="resources.html"]'
+  );
+
+  // Remove old versions to prevent duplicates
+  existingLinks.forEach(link => {
+
+    const parent = link.parentElement;
+
+    if (
+      parent.tagName === "P" &&
+      parent.textContent.trim() === link.textContent.trim()
+    ) {
+      parent.remove();
+    } else {
+      link.remove();
+    }
+
+  });
+
+  // Create consistent support link
+  const supportParagraph = document.createElement("p");
+
+  supportParagraph.className = "footer-support-link";
+
+  const supportLink = document.createElement("a");
+
+  supportLink.href = "resources.html";
+
+  supportLink.textContent =
+    "Need additional support? Find helpful services";
+
+  supportParagraph.appendChild(supportLink);
+
+  footer.appendChild(supportParagraph);
+
+});
