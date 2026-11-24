@@ -269,3 +269,40 @@ document.addEventListener("DOMContentLoaded", () => {
   footer.appendChild(supportParagraph);
 
 });
+// --------------------------------
+// SUPPORT LINK ON ALL OTHER PAGES
+// --------------------------------
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const currentPage = window.location.pathname
+    .split("/")
+    .pop();
+
+  const footer = document.querySelector(
+    "footer, .footer-card, .extra-footer"
+  );
+
+  if (!footer) return;
+
+  // Remove existing support links to prevent duplicates
+  footer.querySelectorAll('a[href="resources.html"]')
+    .forEach(link => {
+      link.remove();
+    });
+
+  // Do not add the link to the Resources page
+  if (currentPage === "resources.html") return;
+
+  const supportText = document.createElement("p");
+  supportText.className = "footer-support-link";
+
+  const supportLink = document.createElement("a");
+  supportLink.href = "resources.html";
+  supportLink.textContent =
+    "Need additional support? Find helpful services";
+
+  supportText.appendChild(supportLink);
+  footer.appendChild(supportText);
+
+});
