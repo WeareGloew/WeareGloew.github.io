@@ -904,3 +904,44 @@ footer,
 body.resources-page .footer-support-link {
   display: none !important;
 }
+/* Keep all five brand values on one line */
+.brand-text-main {
+  white-space: nowrap !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+}
+
+@media (max-width: 768px) {
+
+  header {
+    gap: 6px;
+  }
+
+  .brand {
+    gap: 5px;
+    min-width: 0;
+  }
+
+  .brand-logo img,
+  img.brand-logo {
+    width: 45px;
+    height: 45px;
+    flex-shrink: 0;
+  }
+
+  .brand-text-main {
+    font-size: clamp(7px, 2.1vw, 12px) !important;
+    letter-spacing: -0.2px;
+    white-space: nowrap !important;
+  }
+
+  .brand-text-main br {
+    display: none;
+  }
+
+  .hamburger {
+    flex-shrink: 0;
+    width: 26px;
+  }
+
+}
